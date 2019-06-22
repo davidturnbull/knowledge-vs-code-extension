@@ -1,0 +1,49 @@
+{
+	"name": "knowledge-code",
+	"displayName": "knowledge-code",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.createDraft"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.createDraft",
+				"title": "Create Draft",
+				"category": "Knowledge"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.createDraft",
+					"group": "knowledge"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^10.12.21",
+		"eslint": "^5.13.0",
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28"
+	},
+	"dependencies": {
+		"js-yaml": "^3.13.1",
+		"slugify": "^1.3.4",
+		"stopword": "^0.2.4"
+	}
+}
